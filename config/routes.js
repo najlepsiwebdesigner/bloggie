@@ -32,15 +32,10 @@ module.exports.routes = {
   // located at `views/home/index.ejs`
   // 
   // (This would also work if you had a file at: `/views/home.ejs`)
-  'get /': {
-    controller: 'pages',
-    action: 'homepage'
-  },
 
-  // homepage route
-  'get /home' : {
+  'get /page/add': {
     controller: 'pages',
-    action: 'homepage'
+    action : 'add'
   },
 
   // custom page web frontend
@@ -49,14 +44,21 @@ module.exports.routes = {
     action: 'page'
   },
 
-  // 'get /page/add': {
-  //   controller: 'pages',
-  //   action : 'add'
-  // },
-
   '/page/:page/edit': {
     controller: 'pages',
     action: 'edit'
+  },
+
+  // homepage route
+  'get /home' : {
+    controller: 'pages',
+    action: 'homepage'
+  },
+
+
+  'get /': {
+    controller: 'pages',
+    action: 'homepage'
   },
 
   // routes from passport integration

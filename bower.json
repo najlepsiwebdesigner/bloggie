@@ -4,6 +4,7 @@
   "dependencies": {
     "tinymce": "latest",
     "jquery": "1.10.2",
-    "bootstrap": "~3.0.0-rc1"
+    "bootstrap": "~3.0.0-rc1",
+    "font-awesome": "~3.2.1"
   }
 }

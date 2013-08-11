@@ -1,6 +1,10 @@
 extends ../layout
 
 block body 
-    h1= page.name
-
-    .content!= page.content
+    h1#pageName!=page.name
+    br 
+    span.page-date=page.createdAt
+    br
+    br
+    #pageContent!= page.content
+    br

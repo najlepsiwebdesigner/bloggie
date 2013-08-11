@@ -4,8 +4,26 @@ block body
     h1 Pages
 
     - each page in pages
-        h3 
-            a(href="/page/#{page.latinised_name}/edit")= page.name 
-        .content!= page.content
+        h3.pull-left
+            a(href="/page/#{page.latinised_name}")!= page.name 
+        a.pull-right.btn.btn-default.btn-small.page-edit(href="/page/#{page.latinised_name}/edit")
+            i.icon-cog  edit page
+        a.pull-right.btn.btn-danger.btn-small.page-remove(href="/pages/destroy/#{page.id}")
+            //- (href="/pages/destroy/#{page.id}")
+            i.icon-remove  remove page
+        .content.clearfix(style='clear:both;')
+            br
+            br
+            !{page.content}
         hr
 
+block foot
+    script
+        $('.page-remove').click(function(e){
+            e.stopPropagation();
+            e.preventDefault();
+            $.get($(this).attr('href')).done(function(data){
+                alert('deleted!');
+                document.location.replace(document.location.href);
+            });
+        });

@@ -19,7 +19,7 @@ module.exports = {
 
 
 
- //  create : function (req, res) {
+  add : function (req, res) {
 	// passport.authenticate('local', function(err, user, info)
 	// 	{
 	// 		if ((err) || (!user))
@@ -30,18 +30,18 @@ module.exports = {
 
 	// 		req.logIn(user, function(err)
 	// 		{
-				// if (err)
-				// {
-				// 	res.view();
-				// 	console.log(err);
-				// 	return;
-				// }
+	// 			if (err)
+	// 			{
+					res.view();
+	// console.log(err);
+					return;
+		// 		}
 				
-				// res.redirect('/');
-				// return;
+		// 		res.redirect('/');
+		// 		return;
 		// 	});
 		// })(req, res);
-  // },
+  },
 
 
 
@@ -122,7 +122,7 @@ module.exports = {
 				});	
 
 				// console.log(page);
-				
+
   				// res.redirect('/page/' + page.latinised_name + '/edit');
 			} else {
 				res.redirect('404');
