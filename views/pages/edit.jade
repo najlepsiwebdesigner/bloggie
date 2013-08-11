@@ -8,13 +8,13 @@ html
 
   body
     block body 
-        h1 Edit page
+        h1#pageName=page.name
+            
+        #pageContent!= page.content
+
         form
-            input(type=text,value="#{page.name}",name="name")
-            br
-            textarea#content= page.content
-            br
-            input(type="submit",value="save")
+            input#pageId(type="hidden",value="#{page.id}")
+            input#savePage(type="submit",value="save")
 
     // A few key dependencies, linked in order
     // Bring in the socket.io client
@@ -31,7 +31,37 @@ html
 
     script(type='text/javascript').
         $(function(){
-        tinyMCE.init({
-        selector: '#content'
+        tinymce.init({
+        selector: "h1#pageName",
+        inline: true,
+        toolbar: "undo redo",
+        menubar: false
+        });
+
+        tinymce.init({
+        selector: "#pageContent",
+        inline: true,
+        plugins: [
+            "advlist autolink lists link image charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table contextmenu paste"
+        ],
+        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+        });
+
+        $('#savePage').click(function(e){
+        //- e.stopPropagation();
+        e.preventDefault();
+        $.ajax('/pages/'+$('#pageId').val(), {
+            type: 'PUT',
+            data: {
+                name:$('#pageName').html(),
+                content:$('#pageContent').html()
+            }
+        }).done(function(data){
+            alert('saved!');
+            console.log(data);
+        });
+
         });
         });

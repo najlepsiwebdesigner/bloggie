@@ -11,11 +11,10 @@ html
         h1 Pages
 
         - each page in pages
-            a(href="//www.google.sk")= page.name 
-            br.
-            p= page.content
-            br
-            br
+            h3 
+                a(href="//www.google.sk")= page.name 
+            .content!= page.content
+            hr
 
 
     // A few key dependencies, linked in order
