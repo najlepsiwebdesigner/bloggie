@@ -47,6 +47,61 @@ module.exports.routes = {
     action: 'page'
   },
 
+  '/pages/create': {
+    controller: 'pages',
+    action : 'create'
+  },
+
+
+  // If you want to set up a route only for a particular HTTP method/verb 
+  // (GET, POST, PUT, DELETE) you can specify the verb before the path:
+  'post /login': {
+    controller  : 'auth',
+    action    : 'create'
+  },
+  'get /logout': {
+    controller  : 'auth',
+    action: "logout", 
+  },
+  '/login' : {
+      controller : 'auth'
+    },
+
+  // Keep in mind default routes exist for each of your controllers
+  // So if you have a UserController with an action called "juggle" 
+  // a route will be automatically exist mapping it to /user/juggle.
+  //
+  // Additionally, unless you override them, new controllers will have 
+  // create(), find(), findAll(), update(), and destroy() actions, 
+  // and routes will exist for them as follows:
+  
+
+  // Standard RESTful routing
+  // (if index is not defined, findAll will be used)
+  // 'get /user': {
+  //   controller  : 'user',
+  //   action    : 'index'
+  // },
+  // 'get /user/:id': {
+  //   controller  : 'user',
+  //   action    : 'find'
+  // },
+  // 'post /login': {
+  //   controller  : 'auth',
+  //   action    : 'create'
+  // },
+  // 'put /user/:id': {
+  //   controller  : 'user',
+  //   action    : 'update'
+  // },
+  // 'delete /user/:id': {
+  //   controller  : 'user',
+  //   action    : 'destroy'
+  // },
+  
+
+
+
   /*
   // But what if you want your home page to display
   // a signup form located at `views/user/signup.ejs`?

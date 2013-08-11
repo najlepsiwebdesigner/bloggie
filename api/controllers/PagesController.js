@@ -5,6 +5,8 @@
  * @description	:: Contains logic for handling requests.
  */
 
+var passport = require('passport');
+
 module.exports = {
 
   /* e.g.
@@ -12,6 +14,36 @@ module.exports = {
     res.send('hello world!');
   }
   */
+
+
+
+
+
+  create : function (req, res) {
+	passport.authenticate('local', function(err, user, info)
+		{
+			if ((err) || (!user))
+			{
+				res.redirect('/login');
+				return;
+			}
+
+			req.logIn(user, function(err)
+			{
+				if (err)
+				{
+					res.view();
+					console.log(err);
+					return;
+				}
+				
+				res.redirect('/');
+				return;
+			});
+		})(req, res);
+  },
+
+
 
 
   homepage : function (req, res) {
@@ -27,7 +59,7 @@ module.exports = {
 			return console.log(err);
 	  // Found multiple pages!
 		} else {
-			console.log("Page found:", page);
+			// console.log("Page found:", page);
 
 
 			if (page.length > 0){
