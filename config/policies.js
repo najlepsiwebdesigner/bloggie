@@ -21,6 +21,8 @@ module.exports.policies = {
   // default require authentication
   // see api/policies/authenticated.js
 	'/pages/create': 'authenticated',
+	'/pages/delete': 'authenticated',
+	'/pages/update': 'authenticated',
  
   // whitelist the auth controller
 	'auth':

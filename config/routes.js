@@ -37,22 +37,29 @@ module.exports.routes = {
     action: 'flow'
   },
 
+  // homepage route
   '/home' : {
     controller: 'pages',
     action: 'homepage'
   },
 
+  // custom page web frontend
   '/page/:page': {
     controller: 'pages',
     action: 'page'
   },
 
-  '/pages/create': {
+  '/page/create': {
     controller: 'pages',
     action : 'create'
   },
 
+  '/page/edit/:page': {
+    controller: 'pages',
+    action: 'edit'
+  },
 
+  // routes from passport integration
   // If you want to set up a route only for a particular HTTP method/verb 
   // (GET, POST, PUT, DELETE) you can specify the verb before the path:
   'post /login': {

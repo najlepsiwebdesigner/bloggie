@@ -104,6 +104,32 @@ module.exports = {
 		}
 	});
   },
+  edit : function (req, res) {
+  	var page = req.param('page');
+
+  	Pages.find({
+  		name : page
+  	}).done(function(err, page) {
+	  // Error handling
+		if (err) {
+			return console.log(err);
+	  // Found multiple pages!
+		} else {
+			console.log("Page found:", page);
+
+
+			if (page.length > 0){
+				// res.send(pages);
+				res.view('pages/edit',{
+					page : page.pop()
+				});	
+			} else {
+				res.redirect('404');
+			}
+			
+		}
+	});
+  },
 
 
   flow : function (req, res) {

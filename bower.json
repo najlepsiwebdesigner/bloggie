@@ -1,0 +1,8 @@
+{
+    "name":  "Bloggie",
+    "version": "0.0.1",
+    "dependencies": {
+        "tinymce": "latest",
+        "jquery" : "1.10.2"
+    }
+}
