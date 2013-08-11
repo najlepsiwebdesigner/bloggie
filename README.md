@@ -38,7 +38,7 @@ Preferred workflow starts with command:
 ``` js
 	npm run-script work
 ```
-</code>
+
 
 This command will execute sails lift via nodemon, so auto restart of server after source file modifications in enabled. If you don't like the auto-restart feature, more startup options are available:
 ``` js
@@ -48,7 +48,6 @@ This command will execute sails lift via nodemon, so auto restart of server afte
 	// run sails application
 	sails lift
 ```
-</code>
 
 Useful tools during development:
 
