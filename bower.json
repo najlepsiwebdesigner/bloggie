@@ -1,8 +1,9 @@
 {
-    "name":  "Bloggie",
-    "version": "0.0.1",
-    "dependencies": {
-        "tinymce": "latest",
-        "jquery" : "1.10.2"
-    }
+  "name": "Bloggie",
+  "version": "0.0.1",
+  "dependencies": {
+    "tinymce": "latest",
+    "jquery": "1.10.2",
+    "bootstrap": "~3.0.0-rc1"
+  }
 }

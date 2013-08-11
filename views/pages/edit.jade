@@ -1,22 +1,17 @@
-!!!
-html
-  head
-    title= page.name
+extends ../layout
 
-    // Viewport mobile tag for sensible mobile support
-    meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1")
+block body 
+    h1#pageName=page.name
+        
+    #pageContent!= page.content
 
-  body
-    block body 
-        h1#pageName=page.name
-            
-        #pageContent!= page.content
+    form
+        input#pageId(type="hidden",value="#{page.id}")
+        input#pageLatinisedName(type="text",value="#{page.latinised_name}")
+        input#savePage(type="submit",value="save")
 
-        form
-            input#pageId(type="hidden",value="#{page.id}")
-            input#pageLatinisedName(type="text",value="#{page.latinised_name}")
-            input#savePage(type="submit",value="save")
 
+block foot
     // A few key dependencies, linked in order
     // Bring in the socket.io client
     script(type="text/javascript", src="/js/socket.io.js")
