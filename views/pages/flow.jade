@@ -12,7 +12,7 @@ html
 
         - each page in pages
             h3 
-                a(href="/page/edit/#{page.name}")= page.name 
+                a(href="/page/edit/#{page.latinised_name}")= page.name 
             .content!= page.content
             hr
 

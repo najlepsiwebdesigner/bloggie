@@ -7,8 +7,6 @@
 
 var passport = require('passport');
 
-
-
 module.exports = {
 
   /* e.g.
@@ -54,7 +52,7 @@ module.exports = {
   	// req.params['page'] = defaultPage;
 
   	Pages.find({
-  		name : defaultPage
+  		latinised_name : defaultPage
   	}).done(function(err, page) {
 	  // Error handling
 		if (err) {
@@ -84,7 +82,7 @@ module.exports = {
   	var page = req.param('page');
 
   	Pages.find({
-  		name : page
+  		latinised_name : page
   	}).done(function(err, page) {
 	  // Error handling
 		if (err) {
@@ -140,6 +138,13 @@ module.exports = {
 				return console.log(err);
 		  // Found multiple pages!
 			} else {
+
+				// for (i in pages) {
+				// 	pages[i].latinised_name = pages[i].name.latinise();
+				// 	console.log(i)
+				// }
+
+
 				// console.log("Pagess found:", pages);
 				// res.send(pages);
 				res.view({
