@@ -16,10 +16,34 @@ cd bloggie
 // install 
 npm install
 
+// install front-end dependancies
+bower install
+
 // run the app
 npm run-script work
 
 ```
+
+If you want to use tinyMCE editor, you have to compile it:
+```bash
+
+	# bloggie/
+	# -----------------
+	cd ./assets/bower_components/tinymce
+	npm install
+	jake
+```
+built files are then stored in **./public/bower_components/tinymce/js/tinymce** directory, and manually included wherever needed. Public URL for files is relative path from ./public directory, for example:
+	
+**./public/test.txt => http://mysite/test.txt**
+
+
+If you don't have jake installed, run (on Mac OS X...but learn npm!):
+
+```bash
+sudo npm install -g jake
+```
+
 
 
 ## Development
@@ -29,7 +53,8 @@ npm run-script work
 - standard [sails.js](http://sailsjs.org/#!) applications [(docs)](http://sailsjs.org/#!)
 - uses [passport.js](http://passportjs.org/) for authentification [(docs)](http://passportjs.org/guide/)
 - for auto-restart it uses [nodemon](https://github.com/remy/nodemon) [(docs)](https://github.com/remy/nodemon)
-- templating engine is [jade](http://jade-lang.com/) [(docs)](http://jade-lang.com/)
+- templating engine is [jade](http://jade-lang.com/) [(docs)](http://jade-lang.com/), [(cheatsheet)](http://naltatis.github.io/jade-syntax-docs/)
+- for api docs, bloggie uses I/O Docs in file **./apidocs.json** which you can edit for example at [iodoctor](http://iodoctor.net/)
 
 
 ### Workflow

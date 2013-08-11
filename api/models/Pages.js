@@ -10,7 +10,7 @@ module.exports = {
 
   attributes: {
   	name : "STRING",
-  	url_name : "STRING",
+  	latinised_name : "STRING",
   	title : "STRING",
   	content : "TEXT"
   }

@@ -32,27 +32,36 @@ module.exports.routes = {
   // located at `views/home/index.ejs`
   // 
   // (This would also work if you had a file at: `/views/home.ejs`)
-  '/': {
+
+  'get /page/add': {
     controller: 'pages',
-    action: 'flow'
+    action : 'add'
   },
 
-  '/home' : {
-    controller: 'pages',
-    action: 'homepage'
-  },
-
-  '/page/:page': {
+  // custom page web frontend
+  'get /page/:page': {
     controller: 'pages',
     action: 'page'
   },
 
-  '/pages/create': {
+  '/page/:page/edit': {
     controller: 'pages',
-    action : 'create'
+    action: 'edit'
+  },
+
+  // homepage route
+  'get /home' : {
+    controller: 'pages',
+    action: 'homepage'
   },
 
 
+  'get /': {
+    controller: 'pages',
+    action: 'homepage'
+  },
+
+  // routes from passport integration
   // If you want to set up a route only for a particular HTTP method/verb 
   // (GET, POST, PUT, DELETE) you can specify the verb before the path:
   'post /login': {

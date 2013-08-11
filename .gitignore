@@ -8,7 +8,7 @@
 
 
 ########################
-# node.js / npm
+# node.js / npm / bower
 ########################
 lib-cov
 *.seed
@@ -27,6 +27,7 @@ node_modules
 
 npm-debug.log
 
+public/bower_components
 
 ########################
 # misc / editors
@@ -43,3 +44,8 @@ nbproject
 # local config
 ########################
 config/local.js
+
+########################
+# docs
+########################
+.apidocs.json

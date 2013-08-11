@@ -20,9 +20,12 @@ module.exports.policies = {
 
   // default require authentication
   // see api/policies/authenticated.js
-	'/pages/create': 'authenticated',
+  // @TODO uncomment in development	
+	'/pages/add': 'authenticated',
+	'/pages/edit': 'authenticated',
+	'/pages/destroy': 'authenticated',
  
-  // whitelist the auth controller
+  whitelist the auth controller
 	'auth':
 	{
 		'*': true
@@ -91,3 +94,4 @@ module.exports = function isNiceToAnimals (req, res, next) {
 	next();
 };
 */
+
