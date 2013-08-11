@@ -1,4 +1,2 @@
-bloggie
-=======
-
-Bloggie
+# Bloggie
+### a Sails application
