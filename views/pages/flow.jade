@@ -12,10 +12,9 @@ html
 
         - each page in pages
             h3 
-                a(href="//www.google.sk")= page.name 
+                a(href="/page/edit/#{page.name}")= page.name 
             .content!= page.content
             hr
-
 
     // A few key dependencies, linked in order
 

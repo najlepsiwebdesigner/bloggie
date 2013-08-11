@@ -7,6 +7,8 @@
 
 var passport = require('passport');
 
+
+
 module.exports = {
 
   /* e.g.
@@ -115,14 +117,12 @@ module.exports = {
 			return console.log(err);
 	  // Found multiple pages!
 		} else {
-			console.log("Page found:", page);
-
-
 			if (page.length > 0){
-				// res.send(pages);
+				// res.send(page);
 				res.view('pages/edit',{
 					page : page.pop()
 				});	
+  				// res.redirect('/page/edit/' + page.pop().name);
 			} else {
 				res.redirect('404');
 			}
