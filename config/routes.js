@@ -32,29 +32,29 @@ module.exports.routes = {
   // located at `views/home/index.ejs`
   // 
   // (This would also work if you had a file at: `/views/home.ejs`)
-  '/': {
+  'get /': {
     controller: 'pages',
-    action: 'flow'
+    action: 'homepage'
   },
 
   // homepage route
-  '/home' : {
+  'get /home' : {
     controller: 'pages',
     action: 'homepage'
   },
 
   // custom page web frontend
-  '/page/:page': {
+  'get /page/:page': {
     controller: 'pages',
     action: 'page'
   },
 
-  '/page/create': {
-    controller: 'pages',
-    action : 'create'
-  },
+  // 'get /page/add': {
+  //   controller: 'pages',
+  //   action : 'add'
+  // },
 
-  '/page/edit/:page': {
+  '/page/:page/edit': {
     controller: 'pages',
     action: 'edit'
   },

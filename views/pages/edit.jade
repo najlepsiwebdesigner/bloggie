@@ -70,6 +70,7 @@ html
             }
         }).done(function(data){
             alert('saved!');
+            window.location.replace(document.referrer)
             //- window.location.replace("/page/edit/"+data.name);
             //- console.log(data);
         });

@@ -19,35 +19,35 @@ module.exports = {
 
 
 
-  create : function (req, res) {
-	passport.authenticate('local', function(err, user, info)
-		{
-			if ((err) || (!user))
-			{
-				res.redirect('/login');
-				return;
-			}
+ //  create : function (req, res) {
+	// passport.authenticate('local', function(err, user, info)
+	// 	{
+	// 		if ((err) || (!user))
+	// 		{
+	// 			res.redirect('/login');
+	// 			return;
+	// 		}
 
-			req.logIn(user, function(err)
-			{
-				if (err)
-				{
-					res.view();
-					console.log(err);
-					return;
-				}
+	// 		req.logIn(user, function(err)
+	// 		{
+				// if (err)
+				// {
+				// 	res.view();
+				// 	console.log(err);
+				// 	return;
+				// }
 				
-				res.redirect('/');
-				return;
-			});
-		})(req, res);
-  },
+				// res.redirect('/');
+				// return;
+		// 	});
+		// })(req, res);
+  // },
 
 
 
 
   homepage : function (req, res) {
-  	var defaultPage = '12345';
+  	var defaultPage = 'homepage';
   	
   	// req.params['page'] = defaultPage;
 
@@ -108,7 +108,7 @@ module.exports = {
   	var page = req.param('page');
 
   	Pages.find({
-  		name : page
+  		latinised_name : page
   	}).done(function(err, page) {
 	  // Error handling
 		if (err) {
@@ -120,7 +120,10 @@ module.exports = {
 				res.view('pages/edit',{
 					page : page.pop()
 				});	
-  				// res.redirect('/page/edit/' + page.pop().name);
+
+				// console.log(page);
+				
+  				// res.redirect('/page/' + page.latinised_name + '/edit');
 			} else {
 				res.redirect('404');
 			}
@@ -130,7 +133,7 @@ module.exports = {
   },
 
 
-  flow : function (req, res) {
+  list : function (req, res) {
 
   		Pages.find().done(function(err, pages) {
 		  // Error handling
