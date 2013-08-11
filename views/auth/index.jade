@@ -1,12 +1,21 @@
-form(action='/login', method='post')
-    div
-        label Username:
-        input(type='text', name='username')
-        br
+extends ../layout
+
+block body
+  h1 Log in 
+  br 
+  br 
+  form(action='/login', method='post')
       div
-        label Password:
-        input(type='password', name='password')
-      div
-        input(type='submit', value='Submit')
-    p
-      small Hint - bob:secret
+          label Username:
+          input(type='text', name='username')
+          br
+        div
+          label Password:
+          input(type='password', name='password')
+        div
+          br
+          br
+          button.btn.btn-primary(type='submit', value='Submit')
+            i.icon-user  log in
+      p
+        small Hint - bob:secret
