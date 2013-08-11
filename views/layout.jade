@@ -5,9 +5,52 @@ html
 
     // Viewport mobile tag for sensible mobile support
     meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1")
-
+    link(href="/bower_components/bootstrap/dist/css/bootstrap.css",rel="stylesheet",type="text/css")
+    link(href="/bower_components/font-awesome/css/font-awesome.min.css",rel="stylesheet",type="text/css")
+    style.
+        body {
+            padding-top:50px;
+        }
+        span.page-date {
+            font-style:italic;
+            font-weight:lighter;
+        }
+        a.page-edit, a.page-remove {
+            margin-top:20px;
+            margin-left:5px;
+        }
   body
-    block body
+    .container
+        .row
+            .col-lg-12
+                .navbar.navbar-inverse.navbar-fixed-top.bs-docs-nav
+                    .container
+                        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.bs-navbar-collapse')
+                          span.icon-bar
+                          span.icon-bar
+                          span.icon-bar
+                        a.navbar-brand(href='/') Bloggie!
+                        .nav-collapse.collapse.bs-navbar-collapse
+                          ul.nav.navbar-nav
+                            li
+                              a(href='/pages/list') 
+                                i.icon-list  Pages
+                            li
+                              a(href="/pages/add")
+                                i.icon-plus-sign  Add page
+    
+
+
+        .row 
+            .col-lg-9
+                block body
+            aside.col-lg-3
+                h3 Sidebar
+                br
+                br
+                p.
+                    Lorem ipsum Incididunt ea mollit eiusmod voluptate occaecat fugiat ea in nisi consequat Ut laboris eu ad voluptate amet cillum anim sunt incididunt et non dolore aliquip nostrud tempor cillum cillum in minim amet commodo sint exercitation cillum tempor voluptate et irure consectetur dolore Duis id dolore Ut minim fugiat laboris sunt et nisi reprehenderit proident sint Ut dolore in nostrud aliquip eiusmod dolore ex dolore dolor incididunt commodo dolore officia dolore tempor mollit exercitation ex ullamco reprehenderit amet ad occaecat sint elit aliquip voluptate reprehenderit occaecat reprehenderit in aliquip deserunt nisi nulla enim ullamco fugiat tempor cillum officia et nulla ad cupidatat sed non do pariatur consequat dolor nulla labore non et ad ut cillum Ut quis et sit enim veniam Ut nulla id nulla quis laboris reprehenderit Excepteur ut cupidatat Excepteur do dolor veniam in in sed pariatur elit irure voluptate do dolor qui qui aliqua non ut ullamco irure mollit aliqua dolore adipisicing eu fugiat culpa ea anim amet aliqua id sit qui mollit est non est eiusmod voluptate fugiat ex laboris qui velit do aute incididunt aliqua incididunt Duis do nostrud aliqua ut et incididunt eu occaecat laboris ut laboris sit aliqua sit nulla in occaecat et sed commodo id laboris esse est voluptate ex elit occaecat quis esse quis cillum aliquip pariatur in id enim velit.
+
 
     // A few key dependencies, linked in order
 
@@ -19,3 +62,9 @@ html
 
     // listen on socket.io for incoming messages
     script(type="text/javascript", src="/js/app.js")
+
+    script(type="text/javascript",src="/bower_components/jquery/jquery.js")
+    script(src="/bower_components/bootstrap/dist/js/bootstrap.js")
+
+  foot
+    block foot
