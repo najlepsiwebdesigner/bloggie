@@ -1,0 +1,53 @@
+{
+  "endpoints": [
+    {
+      "name": "/",
+      "methods": [
+        {
+          "MethodName": "/pages",
+          "Synopsis": "GET all the pages",
+          "HTTPMethod": "GET",
+          "URI": "/pages",
+          "RequiresOAuth": "N"
+        },
+        {
+          "MethodName": "/home",
+          "Synopsis": "displays homepage",
+          "HTTPMethod": "GET",
+          "URI": "/home"
+        },
+        {
+          "MethodName": "/page/:page",
+          "Synopsis": "displays page based on its name",
+          "HTTPMethod": "GET",
+          "URI": "/page/:page"
+        },
+        {
+          "MethodName": "/pages/create",
+          "Synopsis": "Displays new page editation form",
+          "HTTPMethod": "GET",
+          "URI": "/pages/create",
+          "RequiresOAuth": "Y"
+        },
+        {
+          "MethodName": "/login",
+          "Synopsis": "displays login screen",
+          "HTTPMethod": "GET",
+          "URI": "/login"
+        },
+        {
+          "MethodName": "/login",
+          "Synopsis": "sign in",
+          "HTTPMethod": "POST",
+          "URI": "/login"
+        },
+        {
+          "MethodName": "/logout",
+          "Synopsis": "logs out the user",
+          "HTTPMethod": "GET",
+          "URI": "/logout"
+        }
+      ]
+    }
+  ]
+}

@@ -30,6 +30,7 @@ npm run-script work
 - uses [passport.js](http://passportjs.org/) for authentification [(docs)](http://passportjs.org/guide/)
 - for auto-restart it uses [nodemon](https://github.com/remy/nodemon) [(docs)](https://github.com/remy/nodemon)
 - templating engine is [jade](http://jade-lang.com/) [(docs)](http://jade-lang.com/)
+- for api docs, bloggie uses I/O Docs in file **./apidocs.json** which you can edit for example at [iodoctor](http://iodoctor.net/)
 
 
 ### Workflow
