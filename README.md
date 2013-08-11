@@ -16,6 +16,9 @@ cd bloggie
 // install 
 npm install
 
+// install front-end dependancies
+bower install
+
 // run the app
 npm run-script work
 
@@ -26,11 +29,16 @@ If you want to use tinyMCE editor, you have to compile it:
 
 	# bloggie/
 	# -----------------
-	cd ./bower_components/tinymce
+	cd ./assets/bower_components/tinymce
 	npm install
 	jake
 ```
-built files are then stored in **tinymce/js/tinymce** directory, and manually included wherever needed. If you don't have jake installed, run (on Mac OS X...but learn npm!):
+built files are then stored in **./public/bower_components/tinymce/js/tinymce** directory, and manually included wherever needed. Public URL for files is relative path from ./public directory, for example:
+	
+**./public/test.txt => http://mysite/test.txt**
+
+
+If you don't have jake installed, run (on Mac OS X...but learn npm!):
 
 ```bash
 sudo npm install -g jake

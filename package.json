@@ -14,7 +14,8 @@
     "nodemon": "~0.7.10",
     "passport": "~0.1.17",
     "passport-local": "~0.1.6",
-    "bower": "~1.1.2"
+    "bower": "~1.1.2",
+    "express": "~3.3.5"
   },
   "scripts": {
     "start": "node app.js",

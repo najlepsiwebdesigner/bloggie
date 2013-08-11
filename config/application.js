@@ -1,3 +1,7 @@
+var express = require('express');
+var path = require('path');
+
+
 var passport = require('passport')
   , LocalStrategy = require('passport-local').Strategy;
  
@@ -97,7 +101,15 @@ module.exports = {
 		{
 			app.use(passport.initialize());
 			app.use(passport.session());
-      
+      // console.log(arguments)
+
+      // var publicPath = path.normalize(__dirname + '/../public/bower_components/jquery');
+      // app.use('/public', express.static(require('path').resolve(__dirname + "/../public/")));
+      // console.log(publicPath);
+
+      // app.use('/public', express.static('/Users/peterbeno/GitHub/bloggie/public'))
+      // app.use('/jquery', express.static(publicPath));
+      // app.use('/', express.static(publicPath));
 		}
 	}
  

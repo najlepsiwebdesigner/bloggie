@@ -12,7 +12,7 @@ html
         form
             input(type=text,value="#{page.name}",name="name")
             br
-            textarea= page.content
+            textarea#content= page.content
             br
             input(type="submit",value="save")
 
@@ -27,4 +27,11 @@ html
     script(type="text/javascript", src="/js/app.js")
 
     script(type="text/javascript",src="/bower_components/jquery/jquery.js")
-    script(type="text/javascript", src="/bower_components/tinymce/tinymce.jquery.js")
+    script(type="text/javascript", src="/bower_components/tinymce/js/tinymce/tinymce.js")
+
+    script(type='text/javascript').
+        $(function(){
+        tinyMCE.init({
+        selector: '#content'
+        });
+        });

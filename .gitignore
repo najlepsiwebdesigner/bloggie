@@ -27,7 +27,7 @@ node_modules
 
 npm-debug.log
 
-assets/bower_components
+public/bower_components
 
 ########################
 # misc / editors
