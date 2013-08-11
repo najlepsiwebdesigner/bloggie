@@ -10,14 +10,21 @@
     "ejs": "0.8.4",
     "optimist": "0.3.4",
     "jade": "~0.34.1",
-    "grunt-develop": "~0.1.1"
+    "grunt-develop": "~0.1.1",
+    "nodemon": "~0.7.10",
+    "passport": "~0.1.17",
+    "passport-local": "~0.1.6"
   },
   "scripts": {
     "start": "node app.js",
-    "debug": "node debug app.js"
+    "debug": "node debug app.js",
+    "work": "nodemon sails lift"
   },
   "main": "app.js",
   "repository": "",
   "author": "",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "grunt-contrib-watch": "~0.5.1"
+  }
 }

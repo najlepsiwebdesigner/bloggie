@@ -14,7 +14,19 @@ module.exports.policies = {
 
   // Default policy for all controllers and actions
   // (`true` allows public access) 
-  '*': true
+  // '*': true
+
+
+
+  // default require authentication
+  // see api/policies/authenticated.js
+	'/pages/create': 'authenticated',
+ 
+  // whitelist the auth controller
+	'auth':
+	{
+		'*': true
+	}
 
   /*
 	// Here's an example of adding some policies to a controller
